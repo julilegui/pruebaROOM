@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">DonaDelSabor</string>
+    <string name="text_username">nombre de usuario</string>
+    <string name="text_hint">Usuario</string>
+    <string name="text_password">contraseña</string>
+    <string name="user">Juliana</string>
+    <string name="text_welcome">Bienvenida</string>
+    <string name="text_title">Introducción</string>
+    <string name="txt_Historia">Quienes somos</string>
+    <string name="text_introduction">Bienvenidos a la Doña del Sabor; donde le llevamos la costa colombiana a su casa.     Lo invitamos a disfrutar de nuestros platos; hechos con productos frescos y la sazón de nuestros chef</string>
+    <string name="text_content">Contamos con atención a domicilio. Estamos ubicados en el malecón de Santa Marta</string>
+    <string name="messagepassword">contraseña errada</string>
+    <string name="message_user">Usuario invalido</string>
+    <string name="home">Inicio</string>
+    <string name="sancocho">Delicioso y nutritivo Sancocho de Pescado. Preparado con bagre fresco, tubérculos, vegetales y un buen guiso para darle aún más sabor,</string>
+    <string name="bocachico">"recibe este nombre gracias al por su cercania al Rio magdalena, este pescado se sala,se pone al sol, se agrega a su preparacion platano, yuca, mazorca, arracacha. Este plato se puede acompañar con arroz si lo prefieres. "</string>
+    <string name="restaurant_about">Somos el mejor restaurante de comida costeña en Bogotá</string>
+</resources>
