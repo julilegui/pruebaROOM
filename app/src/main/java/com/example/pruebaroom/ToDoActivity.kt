@@ -10,10 +10,10 @@ class ToDoActivity : AppCompatActivity() {
 
         if (savedInstanceState==null) {
 
-            supportFragmentManager.beginTransaction()
+            /*supportFragmentManager.beginTransaction()
                 .setReorderingAllowed(true)
                 .add(R.id.fcv, ToDoFragment::class.java, null, "ToDoFragment")
-                .commit()
+                .commit()*/
         }
 
     }
