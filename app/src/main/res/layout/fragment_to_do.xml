@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Me paro en ToDoFragment y creo un android resource file tipo layout-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    tools:context="ToDoFragment"
+    >
+
+    <!--<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#eee"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center_vertical"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvSancocho"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:text="Sancocho Costeño"
+
+        />
+
+        <Button
+            android:id="@+id/btn_sancocho"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/teal_200"
+            android:text=">" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#eee"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center_vertical"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvBocachico"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:text="Viuda de bocachico"
+            />
+
+        <Button
+            android:id="@+id/btn_bocachico"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=">"
+            android:backgroundTint="@color/teal_200"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#eee"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center_vertical"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvChicharron"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:text="Chicharron de pescado"
+            />
+
+        <Button
+            android:id="@+id/btn_chicharron"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=">"
+            android:backgroundTint="@color/teal_200"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#eee"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center_vertical"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCazuela"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:text="Cazuela de mariscos"
+
+            />
+
+        <Button
+            android:id="@+id/btn_cazuela"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=">"
+            android:backgroundTint="@color/teal_200"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#eee"
+        android:layout_marginTop="2dp"
+        android:layout_gravity="center_vertical"
+        android:padding="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvCayeye"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:text="Cayeye"
+
+            />
+
+        <Button
+            android:id="@+id/btn_Cayeye"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=">"
+            android:backgroundTint="@color/teal_200"
+            />
+    </LinearLayout>-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerToDoList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+
+
+
+</LinearLayout>
