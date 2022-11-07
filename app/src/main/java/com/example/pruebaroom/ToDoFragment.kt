@@ -6,11 +6,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import java.util.ArrayList
 
 class ToDoFragment: Fragment() {
+
+    //En esta actividad se coloca el recyclerview
 
     private lateinit var listRecyclerView: RecyclerView
     private lateinit var myAdapter: RecyclerView.Adapter<MyTaskListAdapter.MyViewHolder>
@@ -123,11 +127,11 @@ class ToDoFragment: Fragment() {
             val intent = Intent(activity,NewTaskActivity::class.java)
             startActivity(intent)
 
-            //var recursiveScope = 0
-            //startActivityForResult(intent,recursiveScope)
+            var recursiveScope = 0
+            startActivityForResult(intent,recursiveScope)
         }
 
-        /*var info: Bundle=Bundle()
+        var info: Bundle=Bundle()
 
         info.putStringArrayList("titles", myTaskTitles)
         info.putStringArrayList("contents", myTaskContents)
@@ -136,8 +140,19 @@ class ToDoFragment: Fragment() {
         myAdapter = MyTaskListAdapter(activity as AppCompatActivity,info)
         listRecyclerView.setHasFixedSize(true)
         listRecyclerView.adapter = myAdapter
-        listRecyclerView.addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))*/
-        //updateList()
+        listRecyclerView.addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))
+
+
+    //updateList()
+
+        //listRecyclerView = requireView().findViewById(R.id.recyclerToDoList)
+        //myAdapter = MyTaskListAdapter(activity as AppCompatActivity, info)
+        //listRecyclerView.setHasFixedSize(true)
+        //listRecyclerView.adapter = myAdapter
+        //listRecyclerView.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+
+
+
     }
 
 /*    fun updateList(){
