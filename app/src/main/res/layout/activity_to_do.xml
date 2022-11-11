@@ -9,7 +9,7 @@
     android:id="@+id/drawer_layout"
     tools:context=".ToDoActivity">
 
-    <include layout="@layout/content_activity_to_do"/>
+   <include layout="@layout/content_activity_to_do"/>
 
 
 

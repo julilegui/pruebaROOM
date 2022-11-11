@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pruebaroom.room_database.ToDoDatabase
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import java.util.ArrayList
 
 class ToDoFragment: Fragment() {
@@ -143,7 +146,7 @@ class ToDoFragment: Fragment() {
         listRecyclerView.addItemDecoration(DividerItemDecoration(context,DividerItemDecoration.VERTICAL))
 
 
-    //updateList()
+    updateList()
 
         //listRecyclerView = requireView().findViewById(R.id.recyclerToDoList)
         //myAdapter = MyTaskListAdapter(activity as AppCompatActivity, info)
@@ -155,7 +158,7 @@ class ToDoFragment: Fragment() {
 
     }
 
-/*    fun updateList(){
+    fun updateList(){
 
         val db = ToDoDatabase.getDatabase(requireActivity())
         val toDoDAD = db.todoDao()
@@ -177,7 +180,7 @@ class ToDoFragment: Fragment() {
                 myAdapter.notifyDataSetChanged()
             }
         }
-    }*/
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
