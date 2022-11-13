@@ -42,23 +42,33 @@
                 android:layout_marginTop="28dp"
                 android:layout_gravity="center">
                 <TextView
+                    android:id="@+id/textprovedor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:text="@string/text_welcome"/>
 
                 <TextView
+                    android:id="@+id/textemail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:text="@string/user"/>
+
+                <Button
+                    android:id="@+id/btnLogOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cerrar sesiòn"/>
+
+
             </LinearLayout>
 
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_weight="1"
                 android:layout_marginLeft="25dp"
                 android:src="@drawable/donalogot">
             </ImageView>
