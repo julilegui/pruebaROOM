@@ -11,6 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pruebaroom.room_database.ToDoDatabase
+import com.example.pruebaroom.room_database.ToDoRepository.ToDoRepository
+import com.example.pruebaroom.room_database.viewmodel.ToDoViewModel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import java.util.ArrayList
@@ -24,6 +26,12 @@ class ToDoFragment: Fragment() {
     var myTaskTitles: ArrayList<String> = ArrayList()
     var myTaskContents: ArrayList<String> = ArrayList()
     var myTaskPlaces: ArrayList<String> = ArrayList()
+    var myTaskIds: ArrayList<String> = ArrayList()
+    var info : Bundle = Bundle()
+
+    private lateinit var toDoViewModel : ToDoViewModel
+    private lateinit var toDoRepository : ToDoRepository
+
 
     override fun onCreate(savedInstanceState: Bundle?)
 
@@ -139,6 +147,7 @@ class ToDoFragment: Fragment() {
         info.putStringArrayList("titles", myTaskTitles)
         info.putStringArrayList("contents", myTaskContents)
         info.putStringArrayList("places", myTaskPlaces)
+        info.putStringArrayList("ids", myTaskIds)
         listRecyclerView = requireView().findViewById(R.id.recyclerToDoList)
         myAdapter = MyTaskListAdapter(activity as AppCompatActivity,info)
         listRecyclerView.setHasFixedSize(true)
@@ -162,22 +171,50 @@ class ToDoFragment: Fragment() {
 
         val db = ToDoDatabase.getDatabase(requireActivity())
         val toDoDAD = db.todoDao()
-        runBlocking {
+        /*runBlocking {
             launch {
                 var result = toDoDAD.getAllTasks()
                 var i=1
                 myTaskTitles.clear()
                 myTaskContents.clear()
                 myTaskPlaces.clear()
+                myTaskIds.clear()
                 while (i<result.size){
                     myTaskTitles.add(result[i].title.toString())
                     myTaskContents.add(result[i].content.toString())
                     myTaskPlaces.add(result[i].place.toString())
-
+                    myTaskIds.add(result[i].id.toString())
                     i++
                 }
 
                 myAdapter.notifyDataSetChanged()
+            }
+        }*/
+        toDoRepository = ToDoRepository(toDoDAD)
+        toDoViewModel = ToDoViewModel(toDoRepository)
+        var result = toDoViewModel.getAllTasks()
+        result.invokeOnCompletion {
+            var theTask = toDoViewModel.getTheTasks()
+            if(theTask!!.size!=0){
+
+                var i=1
+                myTaskTitles.clear()
+                myTaskContents.clear()
+                myTaskPlaces.clear()
+                myTaskIds.clear()
+                while (i<theTask.size){
+                    myTaskTitles.add(theTask[i].title.toString())
+                    myTaskContents.add(theTask[i].content.toString())
+                    myTaskPlaces.add(theTask[i].place.toString())
+                    myTaskIds.add(theTask[i].id.toString())
+                    i++
+                }
+
+                myAdapter.notifyDataSetChanged()
+
+
+
+
             }
         }
     }

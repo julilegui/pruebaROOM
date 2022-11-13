@@ -9,6 +9,15 @@
     tools:context=".NewTaskActivity">
 
     <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/editTextIdNt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:visibility="gone"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/editTextTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,6 +36,7 @@
         android:hint="Places"/>
 
     <Button
+        android:id="@+id/btnsavetask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onSaveTask"

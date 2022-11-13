@@ -7,6 +7,8 @@ import androidx.room.*
     suspend fun getAllTasks(): List<ToDo>
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertTask(task: ToDo) : Long
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insertTasks(task: List<ToDo>?) : List<Long>
     @Update
     suspend fun updateTask(task : ToDo)
     @Delete
