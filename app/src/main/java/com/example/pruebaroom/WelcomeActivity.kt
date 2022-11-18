@@ -23,6 +23,8 @@ class WelcomeActivity : AppCompatActivity() {
     private var textemail: TextView?=null
     private var textprovedor: TextView?=null
     private var btnLogOut: Button?=null
+    private var btnProductoAW: Button?=null
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +35,7 @@ class WelcomeActivity : AppCompatActivity() {
         textemail=findViewById(R.id.textemail)
         textprovedor=findViewById(R.id.textprovedor)
         btnLogOut = findViewById(R.id.btnLogOut)
+        btnProductoAW= findViewById(R.id.btnProductoAW)
             val bundle=intent.extras
         val email = bundle?.getString("email")
         val provider = bundle?.getString("provider")
@@ -51,6 +54,12 @@ class WelcomeActivity : AppCompatActivity() {
             val intent = Intent(this,MainActivity::class.java)
             startActivity(intent)
 
+        }
+        //boton de lista de productos
+        btnProductoAW?.setOnClickListener {
+
+            val intent = Intent(this,ListaProductoActivity::class.java)
+            startActivity(intent)
         }
 
 

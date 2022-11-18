@@ -100,11 +100,20 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:text="@string/restaurant_about"
+                    android:text="Lista de prueba de productos"
+                    android:justificationMode="inter_word"
+                    android:autoSizeTextType="uniform"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     />
+                <Button
+                    android:id="@+id/btnProductoAW"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Listar productos"
+                    />
+
+
             </LinearLayout>
 
             <ImageView
