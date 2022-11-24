@@ -1,6 +1,8 @@
 package com.example.pruebaroom
 
+import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.pruebaroom.room_database.AdminProducto.ImagenController
@@ -15,6 +17,7 @@ import kotlinx.coroutines.launch
 //No me aparecen los botones de editar y eliminar
 class NuevoProductoActivity : AppCompatActivity() {
     private val SELECT_ACTIVITY=50
+    private var imagenUri: Uri?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nuevo_producto)
@@ -28,7 +31,8 @@ class NuevoProductoActivity : AppCompatActivity() {
             editTextPrecioANP.setText(producto.precio.toString())
             editTextDescripcionANP.setText(producto.descripcion)
             idProducto=producto.idProducto
-
+            val imageUri = ImagenController.getImagenUri(this,producto.idProducto.toLong())
+            imageViewSelectANP.setImageURI(imageUri)
         }
         buttonANP.setOnClickListener {
             val nombre = editTextNombreANP.text.toString()
@@ -49,12 +53,17 @@ class NuevoProductoActivity : AppCompatActivity() {
                                 "descripcion" to descripcion
                             )
                         )
-
+                    imagenUri?.let {
+                        ImagenController.saveImagen(this@NuevoProductoActivity,result,it)
+                    }
                     this@NuevoProductoActivity.finish()
                 }
             } else {
                 CoroutineScope(Dispatchers.IO).launch {
                     database.productos().update(producto)
+                    imagenUri?.let {
+                        ImagenController.saveImagen(this@NuevoProductoActivity,idProducto.toLong(),it)
+                    }
                     dbFirebase.collection("Productos").document(idProducto.toString())
                         .set(
                             hashMapOf(
@@ -78,6 +87,17 @@ class NuevoProductoActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when{
+            requestCode==SELECT_ACTIVITY && resultCode== Activity.RESULT_OK->{
+                imagenUri = data!!.data
+                imageViewSelectANP.setImageURI(imagenUri)
+            }
+
+        }
     }
 
 

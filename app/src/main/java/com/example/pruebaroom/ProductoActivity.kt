@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import com.example.pruebaroom.room_database.AdminProducto.ImagenController
 import com.example.pruebaroom.room_database.AdminProducto.Producto
 import com.example.pruebaroom.room_database.AdminProducto.ProductoDatabase
 import com.google.firebase.firestore.FirebaseFirestore
@@ -19,10 +20,12 @@ class ProductoActivity : AppCompatActivity() {
         setContentView(R.layout.activity_producto)
         //No me esta mostrando el detalle del producto, por que?
         val producto = intent.getSerializableExtra("producto")as Producto
+        val imageUri = ImagenController.getImagenUri(this,producto.idProducto.toLong())
         textViewNombreAP.text=producto.nombre
         textViewPrecioAP.text="$${producto.precio}"
         textViewDetalleAP.text = producto.descripcion
-        imageViewPerfilAP.setImageResource(producto.imagen)
+        //imageViewPerfilAP.setImageResource(producto.imagen)
+        imageViewPerfilAP.setImageURI(imageUri)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

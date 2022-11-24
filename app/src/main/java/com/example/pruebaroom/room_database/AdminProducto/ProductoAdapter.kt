@@ -18,7 +18,10 @@ ArrayAdapter<Producto>(mContext, 0, listaProductos){
         val producto = listaProductos[position]
         layout.textViewNombreIP.text=producto.nombre
         layout.textViewPrecioIP.text="$${producto.precio}"
-        layout.imageViewProductoIP.setImageResource(producto.imagen)
+        //layout.imageViewProductoIP.setImageResource(producto.imagen)
+        val imageUri = ImagenController.getImagenUri(mContext,producto.idProducto.toLong())
+        layout.imageViewProductoIP.setImageURI(imageUri)
+
         return layout
 
     }
